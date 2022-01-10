@@ -20,6 +20,14 @@ const writeToFile = data => {
 
 }
 
+const exitProcess = results => {
+  if (program.opts().safe) {
+    process.exit(0)
+  } else {
+    process.exit(results.hasFailures() ? 1 : 0)
+  }
+}
+
 if (process.stdin.isTTY) {
   if (program.opts().file) {
     const data = fs.readFileSync(program.opts().file, 'utf-8')
@@ -29,6 +37,7 @@ if (process.stdin.isTTY) {
     } else {
       console.log(result.toXml())
     }
+    exitProcess(result)
   }
 } else {
   if (program.opts().file) {
@@ -52,5 +61,6 @@ if (process.stdin.isTTY) {
     } else {
       console.log(result.toXml())
     }
+    exitProcess(result)
   })
 }
