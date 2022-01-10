@@ -1,10 +1,10 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 const convertor = require('./lib/converter')
 const { Command } = require('commander')
 const fs = require('fs')
 const path = require('path')
 const program = new Command()
-program.version('0.0.1')
+program.version('0.0.5')
 program.option('-f, --file <input>', 'sets file to parse')
 program.option('-o, --output <output>', 'location to write output to. If not set, output will go to console')
 program.option('-s, --safe', 'causes the application to always return 0 regardless of whether tests failed or not')
@@ -28,7 +28,7 @@ const exitProcess = results => {
   }
 }
 
-if (process.stdin.isTTY) {
+if (process.stdin.isTTY || program.opts().file) {
   if (program.opts().file) {
     const data = fs.readFileSync(program.opts().file, 'utf-8')
     let result = convertor.parse(data)
@@ -38,6 +38,8 @@ if (process.stdin.isTTY) {
       console.log(result.toXml())
     }
     exitProcess(result)
+  } else {
+    program.help()
   }
 } else {
   if (program.opts().file) {
