@@ -1,10 +1,13 @@
 {
   "name": "opa2junit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tool for converting OPA test results into JUnit test results",
   "main": "index.js",
   "directories": {
     "lib": "lib"
+  },
+  "bin": {
+    "opa2junit": "./index.js"
   },
   "dependencies": {
     "argparse": "^1.0.10",
