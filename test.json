@@ -1,0 +1,42 @@
+[
+  {
+    "location": {
+      "file": "pass_fail_error_test.rego",
+      "row": 4,
+      "col": 1
+    },
+    "package": "data.example",
+    "name": "test_ok",
+    "duration": 618515
+  },
+  {
+    "location": {
+      "file": "pass_fail_error_test.rego",
+      "row": 9,
+      "col": 1
+    },
+    "package": "data.example",
+    "name": "test_failure",
+    "fail": true,
+    "duration": 322177
+  },
+  {
+    "location": {
+      "file": "pass_fail_error_test.rego",
+      "row": 14,
+      "col": 1
+    },
+    "package": "data.example",
+    "name": "test_error",
+    "error": {
+      "code": "eval_internal_error",
+      "message": "div: divide by zero",
+      "location": {
+        "file": "pass_fail_error_test.rego",
+        "row": 15,
+        "col": 5
+      }
+    },
+    "duration": 345148
+  }
+]

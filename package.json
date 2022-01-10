@@ -1,0 +1,41 @@
+{
+  "name": "opa2junit",
+  "version": "0.0.1",
+  "description": "Tool for converting OPA test results into JUnit test results",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "argparse": "^1.0.10",
+    "commander": "^8.3.0",
+    "esprima": "^4.0.1",
+    "js-yaml": "^3.14.0",
+    "xmlbuilder2": "^3.0.2",
+    "sprintf-js": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dezzles/opa2junit.git"
+  },
+  "keywords": [
+    "opa",
+    "junit",
+    "open",
+    "policy",
+    "agent",
+    "open",
+    "policy",
+    "agent"
+  ],
+  "author": "Dezzles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dezzles/opa2junit/issues"
+  },
+  "homepage": "https://github.com/Dezzles/opa2junit#readme"
+}
